@@ -1,0 +1,62 @@
+import random
+choice=input("what do you choose? type 0 for rock,1 for paper or 2 for scissors. ")
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+if choice not in ["0","1","2"]:
+    print("invalid input, please try again!")
+else:
+    game=["rock","paper","scissors"]
+    computer_choice=random.choice(game)
+    if choice=="0" and computer_choice==game[1]:
+        print(rock)
+        print(f"computer choice:\n {paper} \nyou loose")
+    if choice == "1" and computer_choice == game[0]:
+        print(paper)
+        print(f"computer choice:\n {rock} \nyou win")
+    if choice == "2" and computer_choice == game[0]:
+        print(scissors)
+        print(f"computer choice:\n {rock} \nyou loose")
+    if choice == "2" and computer_choice == game[1]:
+        print(scissors)
+        print(f"computer choice:\n {paper} \nyou win")
+    if choice == "1" and computer_choice == game[2]:
+        print(paper)
+        print(f"computer choice:\n {scissors} \nyou loose")
+    if choice=="0" and computer_choice==game[2]:
+        print(rock)
+        print(f"computer choice:\n {scissors} \nyou win")
+    if choice=="0" and computer_choice==game[0]:
+        print(rock)
+        print(f"computer choice:\n {rock} \ndraw,try again!")
+    if choice=="1" and computer_choice==game[1]:
+        print(paper)
+        print(f"computer choice:\n {paper} \ndraw,try again!")
+    if choice=="2" and computer_choice==game[2]:
+        print(scissors)
+        print(f"computer choice:\n {scissors} \ndraw,try again!")
+0 commit comments
+Comments
+0
+ (0)
