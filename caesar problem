@@ -1,0 +1,33 @@
+import art
+print(art.logo)
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+def caesar(choice,text_letters,shift_number):
+    #decode #boov #1
+    shifted_letter = ""
+    if choice == "decode":
+        shift_number *= -1
+    for char in text_letters:
+        if char in alphabet:
+            new_index = (alphabet.index(char) + shift_number)%26
+            shifted_letter += alphabet[new_index]
+        else:
+            shifted_letter+= char
+    print(f"Here is the {choice}d result: {shifted_letter}")
+
+should_continue=True
+while should_continue:
+
+    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
+    if direction not in ["encode","decode"]:
+        print("invalid input")
+        continue
+    text = input("Type your message:\n").lower()
+    shift = int(input("Type the shift number:\n"))
+
+    caesar(choice=direction,text_letters=text,shift_number=shift)
+
+    restart=input("Type 'yes' if you want to go again. otherwise, type 'no'.\n").lower()
+    if restart=="no":
+        should_continue=False
+        print("good bye")
