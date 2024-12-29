@@ -1,6 +1,7 @@
+# MY SOLUTION
+
 import art
 print(art.logo)
-
 
 player={}
 other_players=True
@@ -20,3 +21,33 @@ while other_players:
                 winner=key
                 print(f"the winner is {key} with a bid of ${player[key]}.")
                 other_players=False
+
+
+
+
+# USING DEF FUNCTION (ACTUAL SOLUTION)
+
+import art
+print(art.logo)
+
+def highest_bidder(dict_name):
+    max_bid=0
+    winner=""
+    for key in dict_name:
+        if dict_name[key]>max_bid:
+            max_bid=dict_name[key]
+            winner=key
+            print(f"the winner is {winner} with a bid of ${max_bid}.")
+
+player={}
+other_players=True
+while other_players:
+    name=str(input("what is your name?: "))
+    bid=int(input("what is your bid?: "))
+    player[name]=bid
+    restart=input("are there any other players? type 'yes' or 'no'.\n").lower()
+    if restart=='yes':
+        print("\n" * 100)
+    elif restart=='no':
+        highest_bidder(player)
+        other_players=False
