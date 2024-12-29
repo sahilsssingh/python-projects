@@ -1,0 +1,22 @@
+import art
+print(art.logo)
+
+
+player={}
+other_players=True
+while other_players:
+    name=str(input("what is your name?: "))
+    bid=int(input("what is your bid?: "))
+    player[name]=bid
+    restart=input("are there any other players? type 'yes' or 'no'.\n").lower()
+    if restart=='yes':
+        print("\n" * 100)
+    elif restart=='no':
+        winner=""
+        max_bid=0
+        for key in player:
+            if player[key]>max_bid:
+                max_bid=player[key]
+                winner=key
+                print(f"the winner is {key} with a bid of ${player[key]}.")
+                other_players=False
