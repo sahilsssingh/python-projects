@@ -1,0 +1,52 @@
+import art
+
+def add(n1, n2):
+    return n1 + n2
+
+def sub(n1,n2):
+    return n1-n2
+
+def mul(n1,n2):
+    return n1 * n2
+
+def dev(n1,n2):
+    return round(n1 /n2,2)
+
+again=True
+while again:
+    print(art.logo)
+    first_number=float(input("whats the first number: "))
+    
+    ans1=""
+    start_again=True
+    while start_again:
+        operation=input("+\n-\n*\n/\n pick an operation: ")
+        second_number=float(input("whats the second number: "))
+        
+        if operation=="+":
+            ans=add(first_number,second_number)
+            ans1+=str(ans)
+            print(f" {first_number} {operation} {second_number} = {ans}")
+        
+        elif operation=="-":
+            ans=add(first_number,second_number)
+            ans1 += str(ans)
+            print(f" {first_number} {operation} {second_number} = {ans}")
+        
+        elif operation=="*":
+            ans = add(first_number, second_number)
+            ans1 += str(ans)
+            print(f" {first_number} {operation} {second_number} = {ans}")
+        
+        elif operation=="/":
+            ans = add(first_number, second_number)
+            ans1 += str(ans)
+            print(f" {first_number} {operation} {second_number} = {ans}")
+
+        restart=input("type 'y' to continue calculating, or type 'n' to start a new calculation: ")
+        if restart=='y':
+            first_number=int(ans1)
+        
+        elif restart=='n':
+            print("\n"*20)
+            start_again=False
